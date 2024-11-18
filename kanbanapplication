@@ -13,7 +13,7 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
 
-// Classe principal
+
 @SpringBootApplication
 public class KanbanApplication {
 	public static void main(String[] args) {
@@ -21,7 +21,7 @@ public class KanbanApplication {
 	}
 }
 
-// Modelo de dados
+
 @Entity
 class Task {
 
@@ -44,7 +44,7 @@ class Task {
 
 	private LocalDate deadline;
 
-	// Getters e Setters
+	
 	public Long getId() { return id; }
 	public void setId(Long id) { this.id = id; }
 	public String getTitle() { return title; }
@@ -61,11 +61,11 @@ class Task {
 	public void setDeadline(LocalDate deadline) { this.deadline = deadline; }
 }
 
-// Repositório
+
 @Repository
 interface TaskRepository extends JpaRepository<Task, Long> {}
 
-// Serviço
+
 @Service
 class TaskService {
 
@@ -109,7 +109,7 @@ class TaskService {
 	}
 }
 
-// Controlador
+
 @RestController
 @RequestMapping("/tasks")
 class TaskController {
